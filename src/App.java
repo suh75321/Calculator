@@ -6,6 +6,11 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        // 연산 결과를 저장할 배열을 선언하고 생성합니다.
+        int[] intArray = new int[10];
+        // 배열의 마지막 인덱스를 저장하는 변수를 선언합니다.
+        int index = 0;
+
         while (true) {//반복을 시작하기위해 추가
             System.out.print("첫 번째 숫자를 입력하세요: ");
             int num1;
@@ -49,6 +54,16 @@ public class App {
             }
 
             System.out.println("결과: " + result);
+
+
+            // 연산 결과를 배열에 저장합니다.
+            if (index < intArray.length) {//이걸로 인트어레이가 인덱스보다 많은지 검사
+                intArray[index] = result;//이 문장은 연산의 결과를 intArray의 index 위치에 저장 예를 들어, index가 0이면, result는 배열의 첫 번째 위치에 저장
+                index++;//저장하면 1증가
+                System.out.println("현재 저장된 결과의 수: " + index);//얼마나 저장했는지 보여줌
+            } else {
+                System.out.println("결과를 더 이상 저장할 수 없습니다.");
+            }
 
             //반복의 끝의 시작
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
