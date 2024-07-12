@@ -22,7 +22,9 @@ public class Calculator {
         resultList.add(result);
         return result;
     }
-
+    public ArrayList<Integer> getResultList() {
+        return resultList;// 이게있어야 계산기가 결과를 저장할수있다.
+    }
 
 }
 

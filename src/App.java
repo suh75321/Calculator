@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
+        Calculator calculator = new Calculator();// 계산기와 연결
         Scanner sc = new Scanner(System.in);
 
         //jcf는 list, set, map이 있는데 list 사용
@@ -25,23 +26,26 @@ public class App {
                 System.out.print("두 번째 숫자를 입력하세요: ");
                 int num2 = sc.nextInt();
 
-                int result = 0;
-                if (operator == '+') {//==인 이유는 char을 쓰면 이퀄이 작동하지 않아 바꿀수밖에 없었다.
-                    result = num1 + num2;
-                } else if (operator == '-') {
-                    result = num1 - num2;
-                } else if (operator == '*') {
-                    result = num1 * num2;
-                } else if (operator == '/') {
-                    if (num2 == 0) {
-                        System.out.println("0으로 나눌 수 없습니다.");
-                        continue;
-                    }
-                    result = num1 / num2;
-                } else {
-                    System.out.println("잘못된 연산자입니다.");
-                    continue;
-                }
+//                int result = 0;
+//                if (operator == '+') {//==인 이유는 char을 쓰면 이퀄이 작동하지 않아 바꿀수밖에 없었다.
+//                    result = num1 + num2;
+//                } else if (operator == '-') {
+//                    result = num1 - num2;
+//                } else if (operator == '*') {
+//                    result = num1 * num2;
+//                } else if (operator == '/') {
+//                    if (num2 == 0) {
+//                        System.out.println("0으로 나눌 수 없습니다.");
+//                        continue;
+//                    }
+//                    result = num1 / num2;
+//                } else {
+//                    System.out.println("잘못된 연산자입니다.");
+//                    continue;
+//                }
+
+                int result = calculator.calculate(num1, num2, operator);// 계산기에 접속해 계산
+
                 // 결과를 위로 옮긴 이유는, 밑으로 하니까 inquiry 입력시 최근걸 저장하기전에 출력을 해서 바로 전 결과물은 출력을 못해서 먼저 자장하도록 옮김
                 System.out.println("결과: " + result);
                 resultList.add(result);
