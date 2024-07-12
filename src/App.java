@@ -56,13 +56,18 @@ public class App {
             System.out.println("결과: " + result);
 
 
-            // 연산 결과를 배열에 저장합니다.
+            // 연산 결과를 배열에 저장.
             if (index < intArray.length) {//이걸로 인트어레이가 인덱스보다 많은지 검사
                 intArray[index] = result;//이 문장은 연산의 결과를 intArray의 index 위치에 저장 예를 들어, index가 0이면, result는 배열의 첫 번째 위치에 저장
                 index++;//저장하면 1증가
                 System.out.println("현재 저장된 결과의 수: " + index);//얼마나 저장했는지 보여줌
             } else {
-                System.out.println("결과를 더 이상 저장할 수 없습니다.");
+                System.out.println("저장 공간이 차서 첫번째 결과값을 지우고 이번 결과 값을 넣었습니다.");//그냥 안내용
+
+                for (int i = 0; i < intArray.length - 1; i++) {
+                    intArray[i] = intArray[i + 1];//10개다 차면 -1하고 뒤에게 앞으로 한칸씩 이동
+                }
+                intArray[intArray.length - 1] = result;//마지막 배열에 현재 결과값 입력
             }
 
             //반복의 끝의 시작
