@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Calculator {
-    private ArrayList<Integer> resultList = new ArrayList<>();
+    private ArrayList<Integer> resultList = new ArrayList<>();// private로 접근 못하게
 
     public int calculate(int num1, int num2, char operator) throws IllegalArgumentException {
         int result;
@@ -22,9 +22,9 @@ public class Calculator {
         resultList.add(result);
         return result;
     }
-    public ArrayList<Integer> getResultList() {
-        return resultList;// 이게있어야 계산기가 결과를 저장할수있다.
-    }
 
+    public ArrayList<Integer> getResultList() {//getter 사용
+        return new ArrayList<>(resultList);
+    }
 }
 
