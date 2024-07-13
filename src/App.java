@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        Calculator calculator = new Calculator();// 계산기와 연결
+        Calculator calculator = new Calculator();// 앱 실행시 새 계산기 생성
         Scanner sc = new Scanner(System.in);
 
         //jcf는 list, set, map이 있는데 list 사용

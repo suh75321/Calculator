@@ -1,7 +1,11 @@
 import java.util.ArrayList;
 
 public class Calculator {
-    private ArrayList<Integer> resultList = new ArrayList<>();// private로 접근 못하게
+    private ArrayList<Integer> resultList;// private로 접근 못하게
+
+    public Calculator() {
+        this.resultList = new ArrayList<>();//Calculator calculator = new Calculator();가 실행되면 resultList 필드를 초기화
+    }
 
     public int calculate(int num1, int num2, char operator) throws IllegalArgumentException {
         int result;
