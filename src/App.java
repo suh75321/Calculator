@@ -36,11 +36,15 @@ public class App {
                 System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? 아니면 결과들을 보시겠습니까? (remove 입력 시 삭제, inquiry 입력시 결과 출력)");
                 String text = sc.next();//위에 안내문 수정
                 if (Objects.equals(text, "remove")) {
-                    if (!resultList.isEmpty()) {//결과가 비었는지 확인
-                        resultList.remove(0);//차있으면 첫번째(0)를 삭제
+                    if (Objects.equals(text, "remove")) {
+                        calculator.removeResult();//calculator랑 연결해서 간결해짐
                         System.out.println("첫번째 결과가 삭제되었습니다.");
-                    } else {
-                        System.out.println("저장된 결과가 없습니다.");
+
+//                    if (!resultList.isEmpty()) {//결과가 비었는지 확인
+//                        resultList.remove(0);//차있으면 첫번째(0)를 삭제
+//                        System.out.println("첫번째 결과가 삭제되었습니다.");
+//                    } else {
+//                        System.out.println("저장된 결과가 없습니다."); 이건 생각해보니 데이터를 지운 상태에선 inquiry를 못하니 필요 없어서 삭제
                     }
                 } else if (Objects.equals(text, "inquiry")) {//remove처럼 똑같이 입력 가능 비어있지 않으면 결과출력
                     if (!resultList.isEmpty()) {

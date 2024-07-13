@@ -26,5 +26,10 @@ public class Calculator {
     public ArrayList<Integer> getResultList() {//getter 사용
         return new ArrayList<>(resultList);
     }
+    public void removeResult() {
+        if (!resultList.isEmpty()) {
+            resultList.remove(0);
+        }
+    }
 }
 
