@@ -31,5 +31,8 @@ public class Calculator {
             resultList.remove(0);
         }
     }
+    public ArrayList<Integer> inquiryResults() {
+        return new ArrayList<>(resultList);
+    }
 }
 
